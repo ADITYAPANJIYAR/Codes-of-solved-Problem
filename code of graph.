@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+void display(vector<int>graph[], int n)
+{
+    for(int i=0;i<n;i++){
+        cout<<"Adjacency list of vertex "<<i<<" is =>";
+        for(auto it=graph[i].begin();it!=graph[i].end();it++){
+            cout<<*it<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+void addEdge(int u, int v,vector<int>graph[])
+{
+    graph[u].push_back(v);
+    graph[v].push_back(u);
+}
+
+int main()
+{
+    int i,j,t,e;
+    cout<<"Enter the number of edges:-"<<endl;
+    cin>>e;
+    int n,u,v;
+    cout<<"Enter the number of vertices:-"<<endl;
+    cin>>n;
+    vector<int>graph[n];
+    for(i=0;i<e;i++){
+        cout<<"Enter start and end vertices of the edges:-"<<endl;
+        cin>>u>>v;
+        addEdge(u,v,graph);
+    }
+    display(graph,n);
+}
