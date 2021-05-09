@@ -1,0 +1,38 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> v(2);
+        int i,j;
+        map<int,int>myMap;
+        for(i=0;i<nums.size();i++)
+            myMap[nums[i]]=i;
+        for(i=0;i<nums.size();i++){
+            int comp=target-nums[i];
+            if(myMap[comp]&&myMap[comp]!=i){
+                v[0]=i;
+                v[1]=myMap[comp];
+            }
+        }
+        return v;
+    }
+};
+
+//////////////////////////////////////////
+          OR
+//////////////////////////////////////////
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> v(2);
+    int i,j;
+    for(i=0;i<nums.size();i++){
+        for(j=i+1;j<nums.size();j++){
+            if(nums[j]==target-nums[i]){
+                 v[0]=i;
+                 v[1]=j;
+                }
+            }
+        }
+        return v;
+    }
+};
