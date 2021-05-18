@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int factorial(int n)
+{
+    int a;
+    if(n==0){
+        return 1;
+    }
+    
+    a=n*factorial(n-1);
+    return a;
+    
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter a number:-"<<endl;
+    cin>>n;
+    cout<<"Factorial of "<<n<<" is "<< factorial(n)<<".";
+    
+}
