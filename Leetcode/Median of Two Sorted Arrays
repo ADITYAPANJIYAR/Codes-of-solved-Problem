@@ -1,0 +1,24 @@
+class Solution {
+public:
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        vector<int>v;
+        vector<int> ::iterator itr;
+        for(itr=nums1.begin();itr<nums1.end();itr++){
+            v.push_back(*itr);
+        }
+        for(itr=nums2.begin();itr<nums2.end();itr++){
+            v.push_back(*itr);
+        }
+        sort(v.begin(),v.end());
+        double sum=0;
+        if( (v.size()%2) == 0){
+            sum=v[(v.size()/2)] + v[ (v.size()/2) -1];
+            sum=sum/2;
+        }
+        else{
+            sum=v[(v.size()/2)];
+        }
+        return sum;
+        
+    }
+};
