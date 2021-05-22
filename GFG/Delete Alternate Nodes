@@ -1,0 +1,18 @@
+void deleteAlt(struct Node *head){
+    // Code here
+    struct Node *t,*r;
+    int sum=0;
+    t=head;
+    while(t!=NULL){
+        sum=sum+1;
+        
+        if(sum%2==0){
+           r->next=t->next;
+        }
+        
+        else{
+        r=t;    
+        t=t->next;
+        }
+            
+    }
