@@ -1,0 +1,17 @@
+int isLengthEvenOrOdd(struct Node* head)
+{
+     //Code here
+     struct Node *t;
+        int sum=0;
+        t=head;
+        while(t!=NULL){
+            sum=sum+1;
+            t=t->next;
+        }
+        if(sum%2==0){
+           return(0);
+        }
+        else{
+             return(1);
+        }
+}
