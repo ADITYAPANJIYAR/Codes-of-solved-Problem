@@ -1,0 +1,12 @@
+struct Node *t, *r;
+        t=r=head;
+        while(t!=NULL){
+            t=t->next;
+            if(t==head){
+                return(1);
+            }
+            if(t==NULL){
+                return(0);
+            }
+            
+        }
