@@ -1,0 +1,31 @@
+void display(Node*head)
+{
+    Node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+}
+Node* deleteNode(Node *head,int x)
+{
+    //Your code here
+    Node *temp,*nextnode;
+    temp=head;
+    int i=1,pos=x;
+    
+    if(pos==1){
+        head=head->next;
+    }
+    
+    else{
+    while(i<pos-1){
+        temp=temp->next;
+        i++;
+    }
+    nextnode=temp->next;
+    temp->next=nextnode->next;
+    free(nextnode);
+    display(head);
+    }
+    
+}
