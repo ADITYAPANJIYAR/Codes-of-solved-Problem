@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+#include <stdio.h>
+using namespace std;
+
+int main()
+{
+    int i,j,t;
+    cin>>t;
+    for(j=0;j<t;j++){
+        int d,x,y,z;
+        cin>>d>>x>>y>>z;
+        if( (x*7) > ((y*d)+(z*(7-d))) ){
+            cout<<(x*7)<<endl;
+        }
+        else{
+            cout<<(y*d)+(z*(7-d))<<endl;
+        }
+    }
+}
