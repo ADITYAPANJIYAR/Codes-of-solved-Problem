@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+#include <stdio.h>
+using namespace std;
+
+int main()
+{
+    int i,j,t;
+    cin>>t;
+    for(j=0;j<t;j++){
+        int g,c;
+        cin>>g>>c;
+        long long int x;
+        x=c*c;
+        x=x/(2*g);
+        cout<<x<<endl;
+    }
+}
