@@ -7,25 +7,37 @@ int main()
     cin>>t;
     
     for(j=0;j<t;j++){
-        long long int x,y,sum=0;
-        cin>>x>>y;
+        int a,b,c;
+        cin>>a>>b>>c;
+        int left=0,right=0;
         
-        if(x%y==0 and y%x==0){
-            cout<<0<<endl;
+        if(a==0){
+            left++;
         }
-        else if(__gcd(x,y)>1){
-            cout<<0<<endl;
+        else{
+            right++;
         }
-        else if(__gcd(x+1,y)>1){
-            cout<<1<<endl;
+        
+        if(b==0){
+            left++;
         }
-        else if(__gcd(x,y+1)>1){
+        else{
+            right++;
+        }
+        
+        if(c==0){
+            left++;
+        }
+        else{
+            right++;
+        }
+        
+        if(left>0 and right>0){
             cout<<1<<endl;
         }
         else{
-            cout<<2<<endl;
+            cout<<0<<endl;
         }
-        
         
     }//testcase loop...
 }
