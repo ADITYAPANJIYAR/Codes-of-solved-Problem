@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#include <stdio.h>
+using namespace std;
+
+int main()
+{
+    int i,j,t;
+    cin>>t;
+    
+    for(j=0;j<t;j++){
+        int n;
+        cin>>n;
+        int a,b,c,count=0;
+        
+        for(c=1;c<=n/2;c++){
+            for(b=c;b<=n;b=b+c){
+                for(a=c;a<=n;a=a+b){
+                    if( (a%b)==c){
+                        count++;
+                    }
+                }
+            }
+        }
+        cout<<count<<endl;
+        
+    }//testcase loop...
+}
