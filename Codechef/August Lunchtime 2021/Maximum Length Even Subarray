@@ -1,0 +1,29 @@
+#include<iostream>
+#include <stdio.h>
+using namespace std;
+
+int main()
+{
+    int i,j,t;
+    cin>>t;
+    
+    for(j=0;j<t;j++){
+        int n,even=0,odd=0;
+        cin>>n;
+        for(i=1;i<=n;i++){
+            if(i%2==0){
+                even++;
+            }
+            else{
+                odd++;
+            }
+        }
+        if(odd%2==0){
+            cout<<even+odd<<endl;
+        }
+        else{
+            cout<<even+odd-1<<endl;
+        }
+        
+    }//testcase loop...
+}
