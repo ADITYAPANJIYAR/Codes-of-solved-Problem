@@ -33,8 +33,7 @@
 \cvjobtitle{Competitive Coder| Android Developer| 5 star in Problem-Solving on HackerRank| Becomes Vocalist with Guitar in evening mood |YouTuber} % Job title/career
 
 \cvdate{} % Date of birth
-\cvaddress{Benta Chock, Laheriasarai,
-Darbhanga, Bihar(846003)
+\cvaddress{Chattarpur, Delhi.
 } % Short address/location, use \newline if more than 1 line is required
 \cvnumberphone{+91 8434569398} % Phone number
 \cvsite{https://www.linkedin.com/in/
@@ -76,26 +75,32 @@ JpBtfud-fLcATMxSaaAiw} % To have no About Me section, just remove all the text a
 
 Software Development , Android Developer, C++, C, JavaScript, React Native, java, python, git, Microsoft Office, Problem Solving.
 
-%----------------------------------------------------------------------------------------
-%	 EDUCATION
-%----------------------------------------------------------------------------------------
-
 \section{Education}
 
 \begin{twenty} % Environment for a list with descriptions
-	\twentyitem{Since 2019}{RCC INSTITUTE OF INFORMATION TECHNOLOGY}{Engineering}{{Grade:- 9.63
+	\twentyitem{Since 2019}{RCC INSTITUTE OF INFORMATION TECHNOLOGY}{Engineering}{{
+	 \underline{Grade:- 9.63 CGPA}
+
 	
 	Current I am having my best education years in my college. It helped me find not only good friends but also helping seniors and given a platform to explore my potential and dive into my extracurricular activities.}}
-	\twentyitem{2016-2018}{Delhi Model Public School - India}{Intermediate}{Percentage:-78.4
+	
+	\twentyitem{2016-2018}{Delhi Model Public School - India}{Intermediate}
+	{\underline{Percentage:-78.4\%}
 	
 	Completed my 11th-12th from here. This place provided me with great study materials and sports activities.}
-	\twentyitem{2013-2016}{JESUS AND MARY ACADEMY}{Matriculation}{Grade:- 9.2CGPA
+	\twentyitem{2013-2016}{JESUS AND MARY ACADEMY}{Matriculation}{
+	\underline{Grade:- 9.2CGPA}
 	
 	Activities and societies:-
 	
 	Approximately spend half of my student life in this school. It was a great place for all-around development for kids as well as teenagers. Assisted my seniors in Science Exhibition and won second prize. Also represented my school in the March Past.
 	}
-	\twentyitem{2011-2012}{ANAND NIKETAN}{ Primary school}{Activities and societies:-
+	
+	\twentyitem{2011-2012}{ANAND NIKETAN}{Middle School}{
+	\underline{Grade:-A}
+	
+	
+	Activities and societies:-
 	
 	Got the second position in the intraschool sprint race. Also represented my house in a singing competition and won first prize.
 	
