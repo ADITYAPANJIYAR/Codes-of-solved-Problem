@@ -18,8 +18,8 @@
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
-
 \documentclass[letterpaper]{twentysecondcv} % a4paper for A4
+\usepackage{color}
 
 %----------------------------------------------------------------------------------------
 %	 PERSONAL INFORMATION
@@ -36,8 +36,7 @@
 \cvaddress{Chattarpur, Delhi.
 } % Short address/location, use \newline if more than 1 line is required
 \cvnumberphone{+91 8434569398} % Phone number
-\cvsite{https://www.linkedin.com/in/
-adityapanjiyar/} % Personal website
+\cvsite{\href{https://www.linkedin.com/in/adityapanjiyar/}{\color{blue}{linkedin}}} % Personal website
 \cvmail{aditya.8mi@gmail.com} % Email address
 
 %----------------------------------------------------------------------------------------
@@ -50,8 +49,8 @@ adityapanjiyar/} % Personal website
 
 \aboutme{I am pursuing a computer Science B.tech course at the RCC Institute Of Information Technology. Currently, I am in my 3rd year and working on Android Development and developing DSA Knowledge. As an intern at Skootr Global Pvt. Ltd., I have worked on AWS and SAP projects and implemented various functionalities on the application. I am also a Guitarist and YouTuber and regularly post guitar cover on my channel.
 
-YouTube Channel link:-https://www.youtube.com/channel/UCI
-JpBtfud-fLcATMxSaaAiw} % To have no About Me section, just remove all the text and leave \aboutme{}
+YouTube Channel link:-\href{https://www.youtube.com/channel/UCIJpBtfud-fLcATMxSaaAiw}{\color{blue}{Click Here}}
+} % To have no About Me section, just remove all the text and leave \aboutme{}
 
 %----------------------------------------------------------------------------------------
 %	 SKILLS
