@@ -1,0 +1,83 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void bfs(vector<int>graph[], int n)
+{
+    int i;
+    vector<int> v;
+    vector<int> vis(n,0);
+    queue<int>q;
+    cout<<"Enter the starting vertex for BFS Traversal"<<endl;
+    int a;
+    cin>>a;
+    q.push(a);
+    vis[a]=1;
+    
+    while(!q.empty()){
+        int temp=q.front();
+        q.pop();
+        v.push_back(temp);
+        for(auto x: graph[temp]){
+            if(!vis[x]){
+                vis[x]=1;
+                q.push(x);
+            }
+        }
+    }
+    
+    cout<<"BFS Traversal is:- ";
+    for(i=0;i<v.size();i++){
+        cout<<v[i]<<" ";
+    }
+    cout<<endl;
+
+    
+}
+
+void display(vector<int>graph[], int n)
+{
+    for(int i=0;i<n;i++){
+        cout<<"Adjacency list of vertex "<<i<<" is =>";
+        for(auto it=graph[i].begin();it!=graph[i].end();it++){
+            cout<<*it<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+void addEdge(int u, int v,vector<int>graph[])
+{
+    graph[u].push_back(v);
+    graph[v].push_back(u);
+}
+
+int main()
+{
+    int i,j,t,e;
+    cout<<"Enter the number of edges:-"<<endl;
+    cin>>e;
+    int n,u,v;
+    cout<<"Enter the number of vertices:-"<<endl;
+    cin>>n;
+    vector<int>graph[n];
+    for(i=0;i<e;i++){
+        cout<<"Enter start and end vertices of the edges:-"<<endl;
+        cin>>u>>v;
+        addEdge(u,v,graph);
+    }
+    display(graph,n);
+    bfs(graph,n);
+}
+
+/*testcase
+7
+4
+3 3
+0 1
+3 1
+0 2
+2 0
+2 3
+1 2
+0
+*/
