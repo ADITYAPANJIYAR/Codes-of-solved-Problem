@@ -1,0 +1,22 @@
+    vector<int> bfsOfGraph(int n, vector<int> graph[])
+    {
+        // Code here
+        vector<int> v;
+        vector<int> vis(n,0);
+        queue<int>q;
+        q.push(0);
+        vis[0]=1;
+        
+        while(!q.empty()){
+            int temp=q.front();
+            q.pop();
+            v.push_back(temp);
+            for(auto x: graph[temp]){
+                if(!vis[x]){
+                    vis[x]=1;
+                    q.push(x);
+                }
+            }
+        }
+        return v;
+    }
