@@ -1,0 +1,67 @@
+/* 1<logn<root(n)<n<nlogn<n^2<n^3<...<2^n<3^n<...<n^n */
+#include<bits/stdc++.h>
+#include <iostream>
+using namespace std;
+int main()
+{
+    int i,j,t;
+    cin>>t;
+    
+    for(j=0;j<t;j++){
+        int n,x;
+        cin>>n>>x;
+        map<int,int>m1;
+        int count=0,answer=0;
+        //map<int,int>m2;
+        
+        for(i=0;i<n;i++)
+        {
+            int temp;
+            cin>>temp;
+            m1[temp]++;
+        }
+        
+        if(x==0)
+        {
+            for(auto itr=m1.begin();itr!=m1.end();itr++){
+                answer=max(answer,itr->second);
+            }
+            cout<<answer<<" "<<0<<endl;
+        }
+        
+        else
+        {
+            for(auto itr=m1.begin();itr!=m1.end();itr++)
+            {
+                int k=(itr->first)^(x);
+                if(m1.find(k)!=m1.end())
+                {
+                    auto t=m1.find(k);
+                    
+                    if(((t->second)+(itr->second))>answer)
+                    {
+                        answer=((t->second)+(itr->second));
+                        count=(itr->second);
+                    }
+                    
+                    else if(((t->second)+(itr->second))==answer)
+                    {
+                        count=min(count,itr->second);
+                    }
+                }
+                if((itr->second)>answer)
+                {
+                    answer=itr->second;
+                    count=0;
+                }
+                else if((itr->second)==answer)
+                {
+                    count=0;
+                }
+            }
+            cout<<answer<<" "<<count<<endl;
+        }
+    }//testcase loop...
+    
+}
+
