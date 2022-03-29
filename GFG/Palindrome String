@@ -1,0 +1,16 @@
+	int isPalindrome(string s)
+	{
+	    // Your code goes here
+	    int i,j,count=0;
+	    int len=s.size();
+	    j=len-1;
+	    for(i=0;i<len/2;i++){
+	        if(s[i]!=s[j])
+	        count++;
+	        j--;
+	    }
+	    if(count!=0)
+	    return 0;
+	    else
+	    return 1;
+	}
