@@ -1,0 +1,70 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int string_compare(string s1, string s2)
+{
+    int l1,l2;
+    l1=s1.size();
+    l2=s2.size();
+    if(l1!=l2)
+    return 0;
+    string temp=s1+s1;
+    return (temp.find(s2) != string::npos);
+}
+
+int main()
+{
+    string s1,s2;
+    cin>>s1;
+    cin>>s2;
+    if(string_compare)
+    cout<<"yes";
+    else
+    cout<<"no";
+}
+Time complexity in O(n).
+/////////////////// OTHER METHOD
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int string_compare(string s1, string s2)
+{
+    int l1,l2;
+    l1=s1.size();
+    l2=s2.size();
+    
+    if(l1!=l2)
+    return 0;
+    
+    else
+    {
+        for(int j=0;j<l1;j++)
+        {
+            char a=s1[0];
+            for(int i=0;i<l1-1;i++)
+            {
+                s1[i]=s1[i+1];
+            }
+            s1[l1-1]=a;
+            //compare...
+            if(s1==s2){
+                return 1;
+                break;
+            }
+        }
+    }
+    return 0;
+}
+
+int main()
+{
+    string s1,s2;
+    cin>>s1;
+    cin>>s2;
+    if(string_compare(s1,s2))
+    cout<<"yes";
+    else
+    cout<<"no";
+}
+Time complexity in O(n^2).
