@@ -1,0 +1,8 @@
+// code here
+	    int pos,i;
+	    vector<int>v;
+	    for(i=0;i<n;i++){
+	        if(a[i]==i+1)
+	        v.push_back(i+1);
+	    }
+	    return v;
