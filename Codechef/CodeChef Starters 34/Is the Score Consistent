@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int i,j,t;
+    cin>>t;
+    
+    //testcases...
+    for(j=0;j<t;j++){
+        int a,b,c,d;
+        cin>>a>>b>>c>>d;
+        if(c<a or d<b)
+        cout<<"IMPOSSIBLE"<<endl;
+        else
+        cout<<"POSSIBLE"<<endl;
+    }
+}
