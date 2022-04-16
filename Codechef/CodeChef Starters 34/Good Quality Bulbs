@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int i,j,t;
+    cin>>t;
+    
+    //testcases...
+    for(j=0;j<t;j++){
+        int n,x;
+        cin>>n>>x;
+        int a[n-1],sum=0;
+        for(i=0;i<n-1;i++){
+            cin>>a[i];
+            sum=sum+a[i];
+        }
+        int y=(n*x)-sum;
+        if(y>=0)
+        cout<<y<<endl;
+        else
+        cout<<0<<endl;
+    }
+}
