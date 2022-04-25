@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t,i,j;
+    cin>>t;
+    
+    for(j=0;j<t;j++){
+        int bill;
+        cin>>bill;
+        int hundred_discount, percentage_discount;
+        hundred_discount=bill-100;
+        percentage_discount=bill-(bill/10);
+        if(percentage_discount>hundred_discount)
+        cout<<100<<endl;
+        else
+        cout<<(bill/10)<<endl;
+    }
+}
