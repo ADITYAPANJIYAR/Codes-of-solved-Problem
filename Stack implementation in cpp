@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+#define n 5
+int stack[n];
+int top=-1;
+
+//Push...
+void push(){
+    int x;
+    cout<<"Enter data"<<endl;
+    cin>>x;
+    if(top==n-1){
+        cout<<"overflow"<<endl;
+    }
+    else{
+        top++;
+        stack[top]=x;
+    }
+}
+
+//Pop...
+void pop(){
+    if(top==-1){
+        cout<<"stack is empty"<<endl;
+    }
+    else{
+        cout<<stack[top]<<endl;
+        top--;
+    }
+}
+
+//Peek...
+void peek(){
+    if(top==-1){
+        cout<<"stack is empty"<<endl;
+    }
+    else{
+        cout<<stack[top]<<endl;
+    }
+}
+
+//Display...
+void display(){
+    if(top==-1){
+        cout<<"stack is empty"<<endl;
+    }
+    else{
+        for(int i=top;i>=0;i--){
+            cout<<stack[i]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+// main...
+int main()
+{
+    
+    int x=0;
+    while(1){
+        cout<<"Enter choice:-"<<endl<<"1: for Push"<<endl<<"2: for Pop"<<endl<<"3: for Peek"<<endl<<"4: for Display"<<endl<<"0: for Exit"<<endl;
+        cin>>x;
+        
+        switch(x){
+            case 0: exit(0);
+                break;
+            case 1: push();
+                break;
+            case 2: pop();
+                break;
+            case 3: peek();
+                break;
+            case 4: display();
+                break;
+            default: cout<<"Wrong choice"<<endl;
+        }
+    }
+}
