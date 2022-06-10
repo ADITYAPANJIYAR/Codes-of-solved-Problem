@@ -1,0 +1,32 @@
+
+void SortedStack :: sort()
+{
+   //Your code here
+   int i=0,j,len,temp;
+   len=s.size();
+   int a[len];
+   
+   while(!s.empty()){
+       int x =s.top();
+       s.pop();
+       a[i]=x;
+       i++;
+   }
+   
+  	for (i = 0; i < len - 1; i++){
+  	    for (j = i+1; j < len; j++){
+  	        if (a[i] > a[j]){
+  	            temp=a[j];
+  	            a[j]=a[i];
+  	            a[i]=temp;
+  	        }
+  	    }
+  	}
+   
+   
+   for(i=0;i<len;i++){
+       s.push(a[i]);
+   }
+   
+  
+}
