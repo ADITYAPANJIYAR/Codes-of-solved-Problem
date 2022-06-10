@@ -1,0 +1,13 @@
+class Solution{
+public:
+    vector<int> Reverse(stack<int> St){
+        vector<int> v;
+        while(!St.empty()){
+            int a=St.top();
+            St.pop();
+            v.push_back(a);
+        }
+
+        return v;
+    }
+};
