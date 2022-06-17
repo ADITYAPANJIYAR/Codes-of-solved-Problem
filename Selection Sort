@@ -30,3 +30,11 @@ int main()
     printArray(arr, n);
     return 0;
 }
+
+Time Complexity:-
+Best-Ω(n^2)
+Average-θ(n^2)
+Worst-O(n^2)
+
+Space Complexity:-
+Worst-O(1)
