@@ -72,3 +72,11 @@ int main()
     printArray(arr, n);
     return 0;
 }
+
+Time Complexity:-
+Best-Ω(n log(n))
+Average-θ(n log(n))	
+Worst-O(n log(n))
+
+Space Complexity:-
+Worst-O(n)
