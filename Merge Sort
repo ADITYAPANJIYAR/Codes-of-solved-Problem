@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void merge(int a[], int left, int mid, int right)
+{
+    int final[right-left+1];
+    int id1=left;
+    int id2=mid+1;
+    int current=0;
+    
+    while(id1<=mid and id2<=right)
+    {
+        if(a[id1]>=a[id2])
+        {
+            final[current]=a[id2];
+            current++;
+            id2++;
+        }
+        else
+        {
+            final[current]=a[id1];
+            current++;
+            id1++;
+        }
+    }
+    
+    while(id1<=mid)
+    {
+        final[current]=a[id1];
+        id1++;
+        current++;
+    }
+    
+    while(id2<=right)
+    {
+        final[current]=a[id2];
+        id2++;
+        current++;
+    }
+    
+    int n = sizeof(final)/sizeof(final[0]);
+    for(int i=0,j=left;i<n;i++,j++){
+        a[j]=final[i];
+    }
+}
+
+void MergeSort(int a[], int left, int right)
+{
+    if(left<right)
+    {
+        int mid=left+(right-left)/2;
+        MergeSort(a,left,mid);
+        MergeSort(a,mid+1,right);
+        merge(a,left,mid,right);
+    }
+    
+}
+
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i=0; i < size; i++)
+    cout<<arr[i]<<" ";
+}
+
+int main()
+{
+    int arr[] = {64, 25, 12, 22, 11,0,23};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    MergeSort(arr,0,n-1);
+    printf("Sorted array: \n");
+    printArray(arr, n);
+    return 0;
+}
