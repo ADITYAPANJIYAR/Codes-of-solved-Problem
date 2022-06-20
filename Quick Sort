@@ -1,0 +1,76 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int partition (int a[], int low, int high)
+{
+    int pivot=a[low];
+    int i=low;
+    int j=high;
+
+    while(i<j)
+    {
+        do{
+            i++;
+        }while (a[i]<pivot);
+
+        do
+        {
+            j--;
+        } while (a[j]>pivot);
+
+        if (i<j)
+        {
+            swap(a[i],a[j]);
+        }
+        
+    }
+    swap(a[low],a[j]);
+    return j;
+}
+
+void Quick_sort(int a[], int low, int high)
+{
+    if (low<high)
+    {
+        /* code */
+        int p=partition(a,low,high);
+        Quick_sort(a,low,p);
+        Quick_sort(a,p+1,high);
+    }
+    
+    
+}
+
+void display(int a[],int n)
+{
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<" ";
+    }
+}
+
+int main()
+{
+    int i=0,n;
+    cout<<"Enter the size of the array:-"<<endl;
+    cin>>n;
+    int a[n];
+    cout<<"Enter the elements of the array:-"<<endl;
+    while(i<n)
+    {
+        cin>>a[i];
+        i++;
+    }
+    Quick_sort(a,0,n);
+    cout<<"sorted array is:-"<<endl;
+    display(a,n);
+    return 0;
+}
+
+
+Time Complexity:-
+Best-Ω(n log(n))
+Average-θ(n log(n))	
+Worst-O(n^2)
+
+Space Complexity:-
+Worst-O(log(n))
