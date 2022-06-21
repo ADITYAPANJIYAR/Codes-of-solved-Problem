@@ -17,3 +17,21 @@ public:
         }
     }
 };
+
+//---------------------OR--------------------------
+class Solution{   
+public:
+    string isVowel(char c){
+        // code here 
+        string s;
+        c = toupper(c);
+        if(c=='A' or c=='E' or c=='I' or c=='O' or c=='U'){
+            s="YES";
+            return s;
+        }
+        else{
+            s="NO";
+            return s;
+        }
+    }
+};
