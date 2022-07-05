@@ -1,0 +1,34 @@
+void left_view(Node *root, int a[], int level)
+{
+    if(root==NULL)
+    return;
+    
+    if(a[level]==0)
+    {
+        a[level]=root->data;
+    }
+    left_view(root->left,a,level+1);
+    left_view(root->right,a,level+1);
+}
+
+//Function to return a list containing elements of left view of the binary tree.
+vector<int> leftView(Node *root)
+{
+   // Your code here
+   int a[1001]={0};
+   vector<int> v;
+   
+   if(root==NULL) 
+   return v;
+   
+   left_view(root, a, 0);
+   for(int i=0;i<1001;i++)
+   {
+       if(a[i]!=0)
+       {
+           v.push_back(a[i]);
+       }
+   }
+   return v;
+   
+}
