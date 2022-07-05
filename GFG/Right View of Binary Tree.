@@ -1,0 +1,41 @@
+void right_view(Node *root, int a[], int level)
+{
+    if(root==NULL)
+    return;
+    
+    if(a[level]==-1)
+    {
+        a[level]=root->data;
+    }
+    right_view(root->right,a,level+1);
+    right_view(root->left,a,level+1);
+}
+
+class Solution
+{
+    public:
+    //Function to return list containing elements of right view of binary tree.
+    vector<int> rightView(Node *root)
+    {
+    // Your Code here
+        int a[100009];
+        //int a[100009]={-1}; will not work
+        for(int i=0;i<100009;i++){
+            a[i]=-1;
+        }
+        vector<int> v;
+        
+        if(root==NULL) 
+        return v;
+        
+        right_view(root, a, 0);
+        for(int i=0;i<100009;i++)
+        {
+            if(a[i]!=-1)
+            {
+                v.push_back(a[i]); 
+            }
+        }
+        return v;
+    }
+};
