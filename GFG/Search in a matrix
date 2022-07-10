@@ -1,3 +1,4 @@
+//O(nxm)
 class Solution{
 public:	
 	int matSearch (vector <vector <int>> &matrix, int N, int M, int X)
@@ -26,3 +27,31 @@ public:
         
     }
 };
+
+////////Better Apporach/////////
+//O(n+m)
+class Solution{
+public:	
+	int matSearch (vector <vector <int>> &matrix, int N, int M, int X)
+	{
+	    // your code here
+	    int i,j;
+	    j=M-1;
+	    i=0;
+	    
+	    while(i<N and j<M and j>=0 and i>=0)
+	    {
+	        if(X==matrix[i][j])
+	        return 1;
+	        
+	        else if(matrix[i][j]>X)
+	        j--;
+	        
+	        else if(matrix[i][j]<X)
+	        i++;
+	        
+	    }
+	    return 0;
+    }
+};
+
