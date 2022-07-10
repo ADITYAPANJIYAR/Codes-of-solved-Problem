@@ -1,0 +1,21 @@
+class Solution{   
+public:
+    int median(vector<vector<int>> &matrix, int r, int c){
+        // code here
+        int median=0 ,i,j;
+        vector<int>v;
+        
+        for(i=0;i<matrix.size();i++)
+        {
+            for(j=0;j<matrix[i].size();j++)
+            {
+                v.push_back(matrix[i][j]);
+            }
+        }
+        
+        sort(v.begin(),v.end());
+        median=v[(v.size()/2)];
+        
+        return median;
+    }
+};
