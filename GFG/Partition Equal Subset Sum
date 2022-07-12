@@ -43,3 +43,44 @@ public:
     }
 };
 //Same as Subset Sum Problem
+///////////// Recursion Apporach (This code gives TLE but the code is correct)////////
+class Solution{
+public:
+
+    bool subset(int arr[], int len, int sum)
+    {
+        if(sum==0)
+        return true;
+        
+        if(len==0)
+        return false;
+        
+        if(arr[len-1]==sum)
+        return true;
+        else if(arr[len-1]<sum)
+        return subset(arr,len-1,sum) || subset(arr,len-1,sum-arr[len-1]);
+        else
+        return subset(arr,len-1,sum);
+    }
+    
+    int equalPartition(int n, int arr[])
+    {
+        // code here
+        int sum=0,i,j;
+        for(i=0;i<n;i++)
+        sum=sum+arr[i];
+        
+        if(sum%2!=0)
+        return false;
+        
+        else
+        {
+            int result=subset(arr,n,sum/2);
+            if(result)
+            return true;
+            else
+            return false;
+        }
+        
+    }
+};
