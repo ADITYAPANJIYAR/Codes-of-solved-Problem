@@ -1,5 +1,6 @@
-    bool isSubsetSum(int n, int arr[], int sum){
+    bool isSubsetSum(vector<int>arr, int sum){
         // code here
+        int n=arr.size();
         int t[n+1][sum+1];
         int i,j;
         for(i=0;i<=n;i++){
@@ -24,4 +25,42 @@
             }
         }
         return t[n][sum];
+        
+        
     }
+    
+};
+
+/////////////////recursion code (this code will get TLE but is correct)////////
+class Solution{   
+public:
+
+    bool subset(vector<int>arr, int len, int sum)
+    {
+        if(sum==0)
+        return true;
+        
+        if(len==0)
+        return false;
+        
+        if(arr[len-1]==sum)
+        return true;
+        else if(arr[len-1]<sum)
+        return subset(arr,len-1,sum) || subset(arr,len-1,sum-arr[len-1]);
+        else
+        return subset(arr,len-1,sum);
+    }
+    
+    bool isSubsetSum(vector<int>arr, int sum){
+        // code here
+        int len=arr.size();
+        int result=subset(arr,len,sum);
+        if(result)
+        return true;
+        else
+        return false;
+        
+        
+    }
+    
+};
