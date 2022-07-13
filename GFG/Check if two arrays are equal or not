@@ -1,0 +1,14 @@
+class Solution{
+    public:
+
+    //Function to check if two arrays are equal or not.
+    bool check(vector<ll> a, vector<ll> b, int N) {
+        //code here
+        sort(a.begin(),a.end());
+        sort(b.begin(),b.end());
+        if(a==b)
+        return true;
+        else
+        false;
+    }
+};
