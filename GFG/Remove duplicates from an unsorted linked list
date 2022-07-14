@@ -1,0 +1,28 @@
+class Solution
+{
+    public:
+    //Function to remove duplicates from unsorted linked list.
+    Node * removeDuplicates( Node *head) 
+    {
+         // your code goes here
+        int a[10009]={0};
+        Node *current=head;
+        Node *prev;
+        
+        while(current!=NULL)
+        {
+            int x=current->data;
+            if(a[x]==1)//present
+            {
+                prev->next=current->next;
+            }
+            else
+            {
+                a[x]=1;
+                prev=current;
+            }
+            current=current->next;
+        }
+        return head;
+    }
+};
