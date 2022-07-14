@@ -1,0 +1,64 @@
+class Solution
+{
+    public:
+    
+    //finding loop...
+    Node* find_loop(Node* head)
+    {
+        if(head ==NULL)
+        return NULL;
+        
+        Node* slow=head;
+        Node* fast=head;
+        
+        while(fast!=NULL and fast->next!=NULL)
+        {
+            slow=slow->next;
+            fast=fast->next->next;
+            if(fast==slow)
+            return slow;
+        }
+        return NULL;
+    }
+    
+    //Function to remove a loop in the linked list.
+    void removeLoop(Node* head)
+    {
+        // code here
+        // just remove the loop without losing any nodes
+        Node* meet=find_loop(head);
+        
+        if(meet!=NULL)
+        {
+            Node* slow=head;
+            Node* fast=head;
+            
+            do
+            {
+                slow=slow->next;
+                fast=fast->next->next;
+            }
+            while(slow!=fast);
+            
+            if(head==slow)
+            {
+                while(fast->next!=head)
+                fast=fast->next;
+                fast->next=NULL;
+            }
+            
+            else
+            {
+                fast=head;
+                while(slow->next!=fast->next)
+                {
+                    slow=slow->next;
+                    fast=fast->next;
+                }
+                slow->next=NULL;
+            }
+            
+        }
+        
+    }
+};
