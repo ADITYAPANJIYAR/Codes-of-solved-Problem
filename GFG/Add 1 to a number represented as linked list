@@ -1,0 +1,57 @@
+class Solution
+{
+    public:
+    //code gor reversing a linklist...
+    Node* reverse(Node *head)
+    {
+        if(head==NULL)
+        return head;
+        
+        Node *prev=NULL;
+        while(head->next!=NULL)
+        {
+            Node *current=head->next;
+            head->next=prev;
+            prev=head;
+            head=current;
+        }
+        head->next=prev;
+        return head;
+    }
+    
+    //function code...
+    Node* addOne(Node *head) 
+    {
+        // Your Code here
+        head=reverse(head);
+        Node *current=head;
+        
+        while(current!=NULL)
+        {
+            if(current->data!=9)
+            {
+                current->data= current->data+1;
+                head=reverse(head);
+                return head;
+            }
+            
+            else if(current->data==9 and current->next==NULL)
+            {
+                current->data=1;
+                Node* temp= new Node(0);
+                temp->next=head;
+                head=temp;
+                head=reverse(head);
+                return head;
+            }
+            
+            else if(current->data==9 and current->next!=NULL)
+            {
+             current->data=0;
+             current=current->next;
+            }
+            
+        }
+        
+    }
+};
