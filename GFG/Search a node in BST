@@ -1,0 +1,15 @@
+bool search(Node* root, int c) {
+    // Your code here
+    int x=c;
+    if(root==NULL)
+    return false;
+    
+    if(root->data==x)
+    return true;
+    
+    if(x>root->data)
+    return search(root->right,x);
+    
+    if(x<root->data)
+    return search(root->left,x);
+}
