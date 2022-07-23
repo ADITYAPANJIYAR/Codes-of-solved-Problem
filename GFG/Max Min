@@ -1,0 +1,43 @@
+class Solution
+{
+   public:
+    int findSum(int a[], int n)
+    {
+    	//code here.
+    	vector<int>v;
+    	int i,ans;
+    	
+    	for(i=0;i<n;i++)
+    	{
+    	    v.push_back(a[i]);
+    	}
+    	sort(v.begin(),v.end());
+    	
+    	ans=v[0]+v[n-1];
+    	return ans;
+    }
+
+};
+
+//OR
+
+class Solution
+{
+   public:
+    int findSum(int a[], int n)
+    {
+    	//code here.
+    	long long int minm=a[0], maxm=a[0], i, ans;
+    	
+    	for(i=0;i<n;i++)
+    	{
+    	    if(a[i]>maxm)
+    	    maxm=a[i];
+    	    
+    	    if(a[i]<minm)
+    	    minm=a[i];
+    	}
+    	ans=maxm+minm;
+    	return ans;
+    }
+};
