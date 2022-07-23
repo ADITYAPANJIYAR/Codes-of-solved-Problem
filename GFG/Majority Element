@@ -1,0 +1,24 @@
+class Solution{
+  public:
+     // Function to find majority element in the array
+    // a: input array
+    // size: size of input array
+    int majorityElement(int a[], int size)
+    {
+        
+        // your code here
+        int i, hash[1000009]={0};
+        for(i=0;i<size;i++)
+        {
+            hash[a[i]]++;
+        }
+        
+        int half=(size/2)+1;
+        for(i=0;i<1000009;i++)
+        {
+            if(hash[i]>=half)
+            return i;
+        }
+        return -1;
+    }
+};
