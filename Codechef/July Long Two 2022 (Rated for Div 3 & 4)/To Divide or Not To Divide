@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+	// your code goes here
+	long long int t,i;
+    cin>>t;
+    
+    while(t)
+    {
+        long long int a,b,n;
+        cin>>a>>b>>n;
+        
+        if(a==b)
+        cout<<-1<<endl;
+        else if(a%b==0)
+        cout<<-1<<endl;
+        
+        else
+        {
+            if(n%a==0 and n%b!=0)
+            cout<<n<<endl;
+            else
+            {
+                if(n%a!=0)
+                n=n+a-(n%a);
+                //        T           T
+                while(n%a!=0 or n%b==0)
+                {
+                    n=n+a;
+                }
+                cout<<n<<endl;
+            }
+        }
+        t--;
+    }
+}
