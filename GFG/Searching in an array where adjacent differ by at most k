@@ -1,0 +1,19 @@
+    //brut force apporach...
+    int i;
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]==x)
+        return i;
+    }
+    return -1;
+    
+    //optimized apporach...
+    int i=0;
+    while(i<n)
+    {
+        if(arr[i]==x)
+        return i;
+        int jump=abs(x-arr[i])/k;
+        i=i+max(1,jump);
+    }
+    return -1;
