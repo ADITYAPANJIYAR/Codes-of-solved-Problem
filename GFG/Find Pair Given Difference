@@ -1,0 +1,48 @@
+bool findPair(int arr[], int size, int n)
+{
+    //Brut force apporach..
+    // int i,j;
+    // for(i=0;i<size-1;i++)
+    // {
+    //     for(j=i+1;j<size;j++)
+    //     {
+    //         if(abs(arr[i]-arr[j])==n)
+    //         {
+    //             return true;
+    //             break;
+    //         }
+            
+    //     }
+    // }
+    // return false;
+    
+    //optimized apporach...
+    long long int i,hash[1000009]={0};
+    for(i=0;i<size;i++)
+    {
+        hash[arr[i]]++;
+    }
+    
+    if(n==0)
+    {
+         for(i=0;i<size;i++)
+         {
+            int x=arr[i];
+            if(hash[x]>1)
+            return true;
+         }
+         return false;
+    }
+    
+    else
+    {
+        for(i=0;i<size;i++)
+        {
+            int x=arr[i];
+            if(hash[x+n]>0)
+            return 1;
+        }
+        return 0;
+    }
+    
+}
