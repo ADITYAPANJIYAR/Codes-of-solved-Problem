@@ -1,0 +1,42 @@
+class Solution {
+  public:
+  
+    bool check(int current, vector<int> &vis, vector<int> &order, vector<int> adj[])
+    {
+        vis[current]=1;
+        order[current]=1;
+        for(auto i: adj[current])
+        {
+            if(!vis[i])
+            {
+                bool config=check(i,vis,order,adj);
+                if(config)
+                return true;
+            }
+            else if(order[i])
+            return true;
+        }
+        order[current]=0;
+        return false;
+    }
+    
+    // Function to detect cycle in a directed graph.
+    bool isCyclic(int v, vector<int> adj[]) 
+    {
+        // code here
+        vector<int>vis(v,0);
+        vector<int>order(v,0);
+        
+        for(int i=0;i<v;i++)
+        {
+            if(!vis[i])
+            {
+                bool c= check(i,vis,order,adj);
+                if(c)
+                return true;
+            }
+        }
+        
+        return false;
+    }
+};
