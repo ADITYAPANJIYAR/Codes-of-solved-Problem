@@ -1,0 +1,38 @@
+class Solution {
+  public:
+  
+    bool check(int current, vector<int> &vis, int parent, vector<int> adj[])
+    {
+        vis[current]=1;
+        for(auto i: adj[current])
+        {
+            if(!vis[i])
+            {
+                bool config=check(i,vis,current,adj);
+                if(config)
+                return true;
+            }
+            else if(i!=parent)
+            return true;
+        }
+        return false;
+    }
+    
+    // Function to detect cycle in an undirected graph.
+    bool isCycle(int v, vector<int> adj[]) 
+    {
+        // Code here
+        vector<int>vis(v,0);
+        for(int i=0;i<v;i++)
+        {
+            if(!vis[i])
+            {
+                bool c= check(i,vis,-1,adj);
+                if(c)
+                return true;
+            }
+        }
+        
+        return false;
+    }
+};
