@@ -1,0 +1,94 @@
+class Solution
+{
+    public:
+    //Function to add two numbers represented by linked list.
+    struct Node* addTwoLists(struct Node* first, struct Node* second)
+    {
+        // code here
+        int i=0,j=0;
+        vector<int>v1;
+        vector<int>v2;
+        struct Node* temp=first;
+        
+        while(temp!=NULL)
+        {
+            v1.push_back(temp->data);
+            temp=temp->next;
+        }
+        
+        temp=second;
+        while(temp!=NULL)
+        {
+            v2.push_back(temp->data);
+            temp=temp->next;
+        }
+        
+        i=v1.size()-1;
+        j=v2.size()-1;
+        vector<int>result;
+        int carry=0;
+        while(i>=0 and j>=0)
+        {
+            int sum=v1[i]+v2[j]+carry;
+            if(sum>=10)
+            {
+                sum=sum-10;
+                carry=1;
+            }
+            else
+            carry=0;
+            result.push_back(sum);
+            i--;
+            j--;
+        }
+        
+        while(i>=0)
+        {
+            int sum=v1[i]+carry;
+            if(sum>=10)
+            {
+                sum=sum-10;
+                carry=1;
+            }
+            else
+            carry=0;
+            result.push_back(sum);
+            i--;
+        }
+        
+        while(j>=0)
+        {
+            int sum=v2[j]+carry;
+            if(sum>=10)
+            {
+                sum=sum-10;
+                carry=1;
+            }
+            else
+            carry=0;
+            result.push_back(sum);
+            j--;
+        }
+        if(carry==1)
+        result.push_back(1);
+        
+        reverse(result.begin(), result.end());
+        struct Node* newhead=NULL;
+        struct Node* tail=NULL;
+        for(int i=0;i<result.size();i++)
+        {
+            Node* newNode=new Node(result[i]);
+            if(newhead==NULL)
+            {
+                newhead=newNode;
+                tail=newNode;
+            }
+            else
+            {
+                tail->next=newNode;
+                tail=newNode;
+            }
+        }
+        return newhead;
+    }
+};
