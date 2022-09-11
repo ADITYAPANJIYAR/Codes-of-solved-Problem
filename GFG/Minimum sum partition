@@ -1,0 +1,60 @@
+class Solution{
+    public:
+    
+    vector<int>vec;
+    void isSubsetSum(int arr[],int len, int sum)
+    {
+        int t[len+1][sum+1];
+        for(int i=0;i<len+1;i++)
+        for(int j=0;j<sum+1;j++)
+        if(i==0)
+        t[i][j]=0;
+        
+        for(int i=0;i<len+1;i++)
+        for(int j=0;j<sum+1;j++)
+        if(j==0)
+        t[i][j]=1;
+        
+        for(int i=1;i<len+1;i++)
+        {
+           for(int j=1;j<sum+1;j++)
+           {
+                if(arr[i-1]<=j)
+                t[i][j]=t[i-1][j-arr[i-1]] or t[i-1][j];
+                else
+                t[i][j]=t[i-1][j];
+           }
+        }
+        
+        if(sum%2!=0)
+        {
+            for(int j=0;j<(sum+1)/2;j++)
+            {
+                if(t[len][j]!=0)
+                vec.push_back(j);
+            }
+        }
+        else
+        {
+            for(int j=0;j<=(sum+1)/2;j++)
+            {
+                if(t[len][j]!=0)
+                vec.push_back(j);
+            }
+        }
+    }
+    
+	int minDifference(int arr[], int n)
+	{ 
+	    // Your code goes here
+	    int range=0;
+	    for(int i=0;i<n;i++)
+	    range+=arr[i];
+	    isSubsetSum(arr,n,range);
+	    
+	    int minm=INT_MAX;
+	    for(int i=0;i<vec.size();i++)
+	    minm=min(minm,range-(2*vec[i]));
+	    return minm;
+	} 
+};
