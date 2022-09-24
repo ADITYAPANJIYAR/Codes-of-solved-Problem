@@ -1,4 +1,4 @@
-//Brut force apporach...
+//Brut force apporach (will pass only 103 testcases)......
 class Solution {
   public:
   
@@ -34,6 +34,74 @@ class Solution {
                 ans=temp;
             }
         }
+        return ans;
+    }
+};
+
+//optimized apporach (will pass all the testcases)...
+class Solution {
+  public:
+	
+	string longestSubString(string s)
+	{
+	    int len=s.size();
+	    int low,high;
+	    string s1,s2,str;
+	    int maxm=0;
+	    int start=0,end=0;
+	    
+	    //even
+	    for(int i=1;i<len;i++)
+	    {
+	        low=i-1;
+	        high=i;
+	        while(low>=0 and high<len and s[low]==s[high])
+	        {
+	            if((high-low+1)>maxm)
+	            {
+	                maxm=(high-low+1);
+	                start=low;
+	                end=high;
+	            }
+	            low--;
+	            high++;
+	        }
+	    }
+	    for(int i=start;i<=end;i++)
+	    s1=s1+s[i];
+	    
+	    //odd
+	    maxm=0;
+	    for(int i=1;i<len;i++)
+	    {
+	        low=i-1;
+	        high=i+1;
+	        while(low>=0 and high<len and s[low]==s[high])
+	        {
+	            if((high-low+1)>maxm)
+	            {
+	                maxm=(high-low+1);
+	                start=low;
+	                end=high;
+	            }
+	            low--;
+	            high++;
+	        }
+	    }
+	    for(int i=start;i<=end;i++)
+	    s2=s2+s[i];
+	    
+	    if(s1.size()>=s2.size())
+	    return s1;
+	    else
+	    return s2;
+	}
+	
+    string longestPalin (string s) 
+    {
+        // code here
+        int len=s.size();
+        string ans=longestSubString(s);
         return ans;
     }
 };
