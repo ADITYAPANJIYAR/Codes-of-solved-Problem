@@ -1,0 +1,39 @@
+//Brut force apporach...
+class Solution {
+  public:
+  
+  	int isPalindrome(string s)
+	{
+	    // Your code goes here
+	    int l=0,h=s.size()-1;
+	    while(h>l)
+	    {
+	        if(s[l]!=s[h])
+	        return 0;
+	        h--;
+	        l++;
+	    }
+	    return 1;
+	}
+	
+    string longestPalin (string s) 
+    {
+        // code here
+        int len=s.size();
+        string ans;
+        for(int i=0;i<len;i++)
+        {
+            string temp;
+            for(int j=i;j<len;j++)
+            {
+                temp=temp+s[j];
+                int count=0;
+                if(isPalindrome(temp))
+                count=temp.size();
+                if(count>ans.size())
+                ans=temp;
+            }
+        }
+        return ans;
+    }
+};
