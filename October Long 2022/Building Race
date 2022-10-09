@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    
+    while(t)
+    {
+        float a,b,x,y;
+        cin>>a>>b>>x>>y;
+        float chef,chefina;
+        chef=a/x;
+        chefina=b/y;
+        
+        // cout<<"chef="<<chef<<" chefina="<<chefina<<endl;
+        
+        if(chef>chefina)
+        cout<<"chefina"<<endl;
+        else if(chef<chefina)
+        cout<<"chef"<<endl;
+        else
+        cout<<"both"<<endl;
+        t--;
+    }
+}
