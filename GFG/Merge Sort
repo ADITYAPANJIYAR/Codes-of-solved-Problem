@@ -1,0 +1,59 @@
+
+class Solution
+{
+    public:
+    void merge(int arr[], int left, int mid, int right)
+    {
+        // Your code here
+        int final[right-left+1];
+        int i=left;
+        int j=mid+1;
+        int k=0;
+        
+        while(i<=mid and j<=right)
+        {
+            if(arr[i]>arr[j])
+            {
+                final[k]=arr[j];
+                j++;
+            }
+            else
+            {
+                final[k]=arr[i];
+                i++;
+            }
+            k++;
+        }
+        
+        while(i<=mid)
+        {
+            final[k]=arr[i];
+            i++;
+            k++;
+        }
+        while(j<=right)
+        {
+            final[k]=arr[j];
+            j++;
+            k++;
+        }
+        
+        int n = sizeof(final)/sizeof(final[0]);
+        for(i=0,j=left;i<n;i++,j++){
+        arr[j]=final[i];
+    }
+    }
+    
+    public:
+    void mergeSort(int arr[], int left, int right)
+    {
+        //code here
+        if(left<right)
+        {
+            int mid=left+(right-left)/2;
+            mergeSort(arr,left,mid);
+            mergeSort(arr,mid+1,right);
+            merge(arr,left,mid,right);
+        }
+    }
+};
