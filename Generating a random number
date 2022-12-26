@@ -1,0 +1,7 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    srand(time(NULL));
+    cout<<"Random number between 0 to 100 is "<<rand()%100;
+}
