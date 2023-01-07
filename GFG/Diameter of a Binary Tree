@@ -46,6 +46,7 @@ class Solution {
        ans=max(ans,1+left_height+right_height);
        return max(left_height,right_height)+1;
    }
+   
    // Function to return the diameter of a Binary Tree.
    int diameter(Node* root)
    {
