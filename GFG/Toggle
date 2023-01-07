@@ -1,0 +1,35 @@
+class Solution {
+  public:
+    int toggle(int n, vector<int> &arr) 
+    {
+        // code here
+        int one=0,zero=0,second_one=0;
+        int count=0;
+        int i;
+        while(i<n)
+        {
+            while(i<n and arr[i]==1)
+            {
+                i++;
+                one++;
+            }
+            while(i<n and arr[i]==0)
+            {
+                i++;
+                zero++;
+            }
+            while(i<n and arr[i]==1)
+            {
+                i++;
+                second_one++;
+            }
+            count=max(count,one+zero+second_one);
+            one=second_one;
+            zero=0;
+            second_one=0;
+        }
+        return count;
+    }
+    
+    
+};
