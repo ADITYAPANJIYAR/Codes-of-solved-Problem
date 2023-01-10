@@ -1,0 +1,11 @@
+bool isBinary(string str)
+{
+   // Your code here
+   int len=str.size();
+   for(int i=0;i<len;i++)
+   {
+       if(str[i]>'1')
+       return false;
+   }
+   return true;
+}
