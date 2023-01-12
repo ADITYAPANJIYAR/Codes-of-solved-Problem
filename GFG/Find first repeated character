@@ -1,0 +1,21 @@
+string firstRepChar(string s)
+{
+    //code here.
+    int n=s.size(),i;
+    int hash[150]={0};
+    string ans;
+    
+    for(i=0;i<n;i++)
+    {
+        int x=(int)(s[i]);
+        if(hash[x]!=0)
+        {
+            ans=ans+s[i];
+            return ans;
+        }
+        else
+        hash[x]=1;
+    }
+    ans=ans+"-1";
+    return ans;
+}
