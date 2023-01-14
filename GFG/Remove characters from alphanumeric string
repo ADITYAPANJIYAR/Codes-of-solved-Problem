@@ -1,0 +1,18 @@
+//User function template for C++
+class Solution{
+public:	
+
+	string removeCharacters(string S) 
+	{
+	    // Your code goes here
+	    string ans;
+	    int i;
+	    for(i=0;i<S.size();i++)
+	    {
+	        if(S[i]>=48 && S[i]<58)
+	        ans=ans+S[i];
+	    }
+	   // cout<<ans<<endl;
+	    return ans;
+	}
+};
