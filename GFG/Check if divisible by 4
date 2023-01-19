@@ -1,0 +1,33 @@
+class Solution{
+public:	
+	
+	int divisibleBy4 (string n)
+	{
+	    // Your Code Here
+	    int len=n.size();
+	    if(len<2)
+	    {
+	        char a=n[n.size()-1];
+            int num=(int) a;
+            num=num-48;
+            if(num%4==0)
+            return 1;
+	    }
+	    else
+	    {
+	        char a=n[n.size()-2];
+            int num=(int) a;
+            num=num-48;
+            num=num*10;
+            
+            int ans=num;
+            a=n[n.size()-1];
+            num=(int) a;
+            num=num-48;
+            ans=ans+num;
+            if(ans%4==0)
+            return 1;
+	    }
+	    return 0;
+	}
+};
