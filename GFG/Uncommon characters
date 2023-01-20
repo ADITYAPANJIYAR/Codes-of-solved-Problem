@@ -1,0 +1,55 @@
+class Solution
+{
+    public:
+        string UncommonChars(string A, string B)
+        {
+            // code here
+            string ans;
+            sort(A.begin(),A.end());
+            sort(B.begin(),B.end());
+            if(A==B)
+            {
+                ans=ans+"-1";
+                return ans;
+            }
+
+            int hasha[150]={0};
+            int hashb[150]={0};
+            
+            for(int i=0;i<A.size();i++)
+            hasha[A[i]]++;
+            for(int i=0;i<B.size();i++)
+            hashb[B[i]]++;
+            
+            for(int i=0;i<A.size();i++)
+            {
+                if(hashb[A[i]]<1)
+                ans=ans+A[i];
+            }
+            for(int i=0;i<B.size();i++)
+            {
+                if(hasha[B[i]]<1)
+                ans=ans+B[i];
+            }
+            if(ans.size()==0)
+            {
+                ans=ans+"-1";
+                return ans;
+            }
+            sort(ans.begin(),ans.end());
+            
+            int hashans[150]={0};
+            for(int i=0;i<ans.size();i++)
+            hashans[ans[i]]++;
+            
+            string count;
+            for(int i=0;i<150;i++)
+            {
+                char ch;
+                ch=i;
+                if(hashans[i]>0)
+                count=count+ch;
+            }
+            return count;
+        }
+};
