@@ -1,0 +1,26 @@
+string solve(string a)
+{
+    // code here
+    int count=0;
+    string consonent;
+    for(int i=0;i<a.size();i++)
+    {
+        if(a[i]!='a' and a[i]!='e' and a[i]!='i' and a[i]!='o' and a[i]!='u')
+        consonent=consonent+a[i];
+    }
+    
+    int hash[150]={0};
+    for(int i=0;i<consonent.size();i++)
+    hash[consonent[i]]++;
+    
+    for(int i=0;i<150;i++)
+    {
+        if(hash[i]>=1)
+        count++;
+    }
+    
+    if(count%2==0)
+    return "SHE!";
+    else
+    return "HE!";
+}
