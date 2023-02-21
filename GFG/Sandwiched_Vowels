@@ -1,0 +1,38 @@
+class Solution{
+    
+    public:
+    
+    int isVowel(char ch)
+    {
+        int check = 0;
+        switch (ch) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+        case 'A':
+        case 'E':
+        case 'I':
+        case 'O':
+        case 'U':
+            check = 1;
+        }
+        return check;
+    }
+    
+    string Sandwiched_Vowel(string s)
+    {
+        // Your code goes here
+        int n=s.size();
+        string ans;
+        ans=ans+s[0];
+        for(int i=1;i<n;i++)
+        {
+            if(isVowel(s[i]) and !isVowel(s[i-1]) and !isVowel(s[i+1]) and i<n-1)
+            continue;
+            ans=ans+s[i];
+        }
+        return ans;
+    }
+};
