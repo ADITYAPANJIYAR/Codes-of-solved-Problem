@@ -15,3 +15,23 @@ class Solution{
         return ans;
     }
 };
+
+
+//Another Apporach
+class Solution{
+    public:
+    // Function to find number of bits needed to be flipped to convert A to B
+    int countBitsFlip(int a, int b)
+    {
+        // Your logic here
+        int ans=0;
+        int temp=a^b;
+        while(temp>0)
+        {
+            if(temp%2==1)
+            ans++;
+            temp=temp/2;
+        }
+        return ans;
+    }
+};
