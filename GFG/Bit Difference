@@ -1,0 +1,17 @@
+class Solution{
+    public:
+    // Function to find number of bits needed to be flipped to convert A to B
+    int countBitsFlip(int a, int b)
+    {
+        // Your logic here
+        int ans=0;
+        int temp=a^b;
+        while(temp>0)
+        {
+            if((temp & 1)==1)
+             ans++;
+             temp>>=1;
+        }
+        return ans;
+    }
+};
