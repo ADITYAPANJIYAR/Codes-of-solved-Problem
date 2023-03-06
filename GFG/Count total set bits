@@ -1,0 +1,16 @@
+class Solution{
+    public:
+    // n: input to count the number of set bits
+    //Function to return sum of count of set bits in the integers from 1 to n.
+    int countSetBits(int n)
+    {
+        // Your logic here
+        int i,sum=0;
+        for(i=1;i<=n;i++)
+        {
+            int cnt=__builtin_popcount(i);
+            sum+=cnt;
+        }
+        return sum;
+    }
+};
