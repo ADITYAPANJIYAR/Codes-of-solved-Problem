@@ -15,3 +15,33 @@ class Solution
         return max(lcs(x,y-1,s1,s2), lcs(x-1,y,s1,s2));
     }
 };
+
+//Memozied version (will pass all the test cases).
+int static t[1001][1001];
+int LCS(int x, int y, string s1, string s2)
+{
+    if(x<0 or y<0)
+    return 0;
+    
+    if(t[x][y]!=-1)
+    return t[x][y];
+    
+    if(s1[x]==s2[y])
+    return t[x][y]=1+LCS(x-1,y-1,s1,s2);
+    else
+    return t[x][y]=max(LCS(x,y-1,s1,s2), LCS(x-1,y,s1,s2));
+}
+
+class Solution
+{
+    public:
+    //Function to find the length of longest common subsequence in two strings.
+    int lcs(int x, int y, string s1, string s2)
+    {
+        // your code here
+        memset(t, -1, sizeof(t));
+        int result;
+        result=LCS(x-1,y-1,s1,s2);
+        return result;
+    }
+};
