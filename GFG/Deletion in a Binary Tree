@@ -1,0 +1,35 @@
+struct Node* deletionBT(struct Node* root, int key)
+{
+    // code here
+    if(root==NULL)
+    return NULL;
+    
+    queue<Node*>q;
+    q.push(root);
+    Node *keynode, *current, *last;
+    while(!q.empty())
+    {
+        current=q.front();
+        q.pop();
+        if(current->data==key)
+        keynode=current;
+        
+        if(current->left!=NULL)
+        {
+            q.push(current->left);
+            last=current;
+        }
+        
+        if(current->right!=NULL)
+        {
+            q.push(current->right);
+            last=current;
+        }
+    }
+    keynode->data=current->data;
+    if(last->left==current)
+    last->left=NULL;
+    if(last->right==current)
+    last->right=NULL;
+    return root;
+}
