@@ -48,3 +48,26 @@ class Solution
         
     }
 };
+
+//Optimized apporach->1
+class Solution
+{
+    public:
+    bool check(Node* root, int minm, int maxm)
+    {
+        if(root==NULL)
+        return true;
+        if(root->data<minm or root->data>maxm)
+        return false;
+        return(check(root->left,minm,root->data-1) and check(root->right,root->data+1,maxm));
+    }
+    
+    //Function to check whether a Binary Tree is BST or not.
+    bool isBST(Node* root) 
+    {
+        // Your code here
+        int minm=INT_MIN;
+        int maxm=INT_MAX;
+        return(check(root,minm,maxm));
+    }
+};
