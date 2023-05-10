@@ -71,3 +71,25 @@ class Solution
         return(check(root,minm,maxm));
     }
 };
+
+//Optimized apporach->2
+class Solution
+{
+    public:
+    Node* prev=NULL;
+    //Function to check whether a Binary Tree is BST or not.
+    bool isBST(Node* root) 
+    {
+        // Your code here
+        if(root!=NULL)
+        {
+            if(!isBST(root->left))
+            return false;
+            if(prev!=NULL and prev->data>=root->data)
+            return false;
+            prev=root;
+            return isBST(root->right);
+        }
+        return true;
+    }
+};
