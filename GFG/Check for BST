@@ -49,7 +49,7 @@ class Solution
     }
 };
 
-//Optimized apporach->1
+//Optimized approach->1
 class Solution
 {
     public:
@@ -72,7 +72,7 @@ class Solution
     }
 };
 
-//Optimized apporach->2
+//Optimized approach->2
 class Solution
 {
     public:
@@ -91,5 +91,36 @@ class Solution
             return isBST(root->right);
         }
         return true;
+    }
+};
+
+//Optimized approach->3
+class Solution
+{
+    public:
+    
+    void check(Node* root, Node* &prev,int &flag)
+    {
+        if(root==NULL)
+        return;
+        
+        check(root->left,prev,flag);
+        if(prev!=NULL and prev->data>=root->data)
+        {
+            flag=0;
+            return;
+        }
+        prev=root;
+        check(root->right,prev,flag);
+    }
+    
+    //Function to check whether a Binary Tree is BST or not.
+    bool isBST(Node* root)
+    {
+        // Your code here
+        Node* prev=NULL;
+        int flag=1;
+        check(root,prev,flag);
+        return flag;
     }
 };
