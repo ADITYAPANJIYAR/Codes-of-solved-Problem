@@ -1,0 +1,36 @@
+class Solution {
+public:
+    
+    void rotate_array(vector<int>& nums, int n)
+    {
+        int last=nums[0];
+        for(int i=0;i<n-1;i++)
+        {
+            nums[i]=nums[i+1];
+        }
+        nums[n-1]=last;
+    }
+    
+    bool check(vector<int>& nums)
+    {
+        vector<int>v;
+        int n=nums.size();
+        
+        for(int i=0;i<n;i++)
+        {
+            int x=nums[i];
+            v.push_back(x);
+        }
+        sort(v.begin(),v.end());
+        if(nums==v)
+        return true;
+        
+        for(int i=0;i<n;i++)
+        {
+            rotate_array(nums,n);
+            if(nums==v)
+            return true;
+        }
+        return false;
+    }
+};
