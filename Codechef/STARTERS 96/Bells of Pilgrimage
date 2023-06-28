@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	// your code goes here
+	int t,j;
+	cin>>t;
+	while(t)
+	{
+	    t--;
+	    int n,x,k,p;
+	    cin>>n>>x>>k>>p;
+	    
+	    if(k==0)
+	    {
+	        cout<<p<<endl;
+	    }
+	    else if(x>k)
+	    {
+	        p=p+(k)*10;
+	        cout<<p<<endl;
+	    }
+	    else if(x==k)
+	    {
+	        p=p+(x*10);
+	        cout<<p<<endl;
+	    }
+	    else if(k>x and n!=k)
+	    {
+	        p=p+(x*10)+(k-x)*(5);
+	        cout<<p<<endl;
+	    }
+	    else if(k==n)
+	    {
+	        p=p+20;
+	        p=p+(x*10)+((k-x)*5);
+	        cout<<p<<endl;
+	    }
+	}
+}
