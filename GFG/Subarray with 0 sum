@@ -1,0 +1,24 @@
+//Runtime Error 
+//Test Cases Passed: 121 /431
+class Solution{
+    public:
+    //Complete this function
+    //Function to check whether there is a subarray present with 0-sum or not.
+    bool subArrayExists(int arr[], int n)
+    {
+        //Your code here
+        for(long long int i=0;i<n;i++)
+        {
+            long long int sum=arr[i];
+            for(long long int j=i+1;j<n;j++)
+            {
+                if(sum==0)
+                return true;
+                sum=sum+arr[j];
+            }
+            if(sum==0)
+            return true;
+        }
+        return false;
+    }
+};
