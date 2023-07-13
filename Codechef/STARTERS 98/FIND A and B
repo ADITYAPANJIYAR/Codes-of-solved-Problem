@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t)
+    {
+        t--;
+        int x,y,z,a,b;
+        cin>>x>>y>>z;
+        
+        if((x*y)%z==0)
+        cout<<x*y<<" "<<z<<endl;
+        else if((z*y)%x==0)
+        cout<<z*y<<" "<<x<<endl;
+        else if((z*x)%y==0)
+        cout<<z*x<<" "<<y<<endl;
+        else
+        cout<<-1<<endl;
+    }
+}
