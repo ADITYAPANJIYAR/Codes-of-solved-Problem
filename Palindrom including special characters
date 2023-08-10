@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isPalindrom(string s)
+{
+    int i=0, j=s.size()-1;
+    while(i<j)
+    {
+        if(tolower(s[i])!=tolower(s[j]))
+        return false;
+        i++;
+        j--;
+    }
+    return true;
+}
+
+int main()
+{
+    string s;
+    cout<<"Enter a strig"<<endl;
+    getline(cin,s);
+    string temp;
+    for(int i=0;i<s.size();i++)
+    if( (s[i]>='a' and s[i]<='z') or(s[i]>='A' and s[i]<='Z'))
+    temp=temp+s[i];
+    cout<<temp<<endl;
+    if(isPalindrom(temp))
+    cout<<"YES"<<endl;
+    else
+    cout<<"NO"<<endl;
+}
