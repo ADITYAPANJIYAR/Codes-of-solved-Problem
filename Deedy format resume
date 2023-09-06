@@ -60,10 +60,8 @@
 
 \documentclass[]{deedy-resume-reversed}
 \usepackage{fancyhdr}
-
 \pagestyle{fancy}
 \fancyhf{}
-
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -79,7 +77,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \namesection{Aditya Panjiyar}{ %\urlstyle{same}\href{http://example.com}{example.com}| \href{http://example2.co}{example2.co}\\
-\href{mailto:aditya.8mi@gmail.com}{aditya.8mi@gmail.com} | \href{tel:1615663567}{8434569398}
+\href{mailto:aditya.8mi@gmail.com}{aditya.8mi@gmail.com} | \href{tel:8434569398}{8434569398}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -95,37 +93,41 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Experience}
-\runsubsection{ADTRAN}
-\descript{| Advanced Development Intern }
-\location{May 2018 – Aug 2018 | Huntsville, AL}
+
+\runsubsection{
+\lowercase{\href{https://www.linkedin.com/company/maxerienceinc/}}
+{\underline{Maxerience}}}
+\descript{| AI and ML Intern}
+\location{Oct 2021 – Jan 2022 | Delhi, India}
 \vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
-\item Developed a cloud-based solution to automate and enhance the engineering process for network installation using AWS and Python.
-\item Worked with other teams to create a system to collect and visualize telemetry data of network elements in real time using AWS, Python, and DOMO.
-\item Consulted with other teams to jump start cloud-technology adoption and solutions throughout the company.
-\item Contributed to initial planning for optics-alignment system utilizing AWS, reinforcement learning, and an IoT architecture.
+\item Worked on Basic \textbf{computer vision}  and \textbf{Augmentation}.
+\item Trained an image dataset with the help of tools like \textbf{TensorFlow} and \textbf{Google Colab}.
+\item Learned Image Processing along with libraries like \textbf{OpenCV} and \textbf{Pandas}.
+
+\end{tightemize}
+\sectionsep
+\runsubsection{
+\lowercase{\href{https://www.linkedin.com/company/ceon-solutions-pvt.-ltd/}}
+{\underline{Ceon Solutions Pvt.Ltd.}}}
+\descript{| Backend Intern }
+\location{Jan 2021 - Mar 2021}
+\begin{tightemize}
+\item Contributed to writing \textbf{backend C++} code for the product.
+\item Assisted in designing the adaptive learning process flow under a solution architect.
+
 \end{tightemize}
 \sectionsep
 
-\runsubsection{ExxonMobil IT}
-\descript{| Intern }
-\location{Feb 2017 – Nov 2017 | The Woodlands, TX}
+\runsubsection{
+\lowercase{\href{https://www.linkedin.com/company/skootr-offices/}}
+{\underline{Skootr Offices}}}
+\descript{| Application Engineer}
+\location{Aug 2020 – Oct 2020 | Gurugram}
 \begin{tightemize}
-\item Coordinated with multiple departments to lead a software product evaluation resulting in a fit-for-purpose verdict and provided a recommendation on moving forward.
-\item Organized meetings with the vendor to receive in-depth product information and answers to cross-departmental questions.
-\item Participated on the Web Development Taskforce to provide AngularJS sites to internal customers.
-\item Participated in an internal CodeJam to prototype a blockchain application for managing a model supply-chain.
-\item Worked with a team to plan executive visit and team-building exercise for 200 employees.
-\end{tightemize}
-\sectionsep
-
-\runsubsection{Mississippi State University ITS}
-\descript{| Assistant Support Specialist }
-\location{Aug 2015 – Oct 2016 | Mississippi State, MS}
-\begin{tightemize}
-\item Interacted with clients to assess their problems and implement a solution in an efficient, friendly manner.
-\item Prepared workstations and laptops for future use by company employees.
-\item Created scripts to automate common tasks and increase productivity.
+% \item Worked on Managed Office Applications for futuristic, Customized, Premium and smart offices.
+\item  Worked on \textbf{Android} and did \textbf{Manual-Testing}.
+\item  Solved \textbf{edge cases} errors.\textbf{}
 \end{tightemize}
 \sectionsep
 
@@ -134,23 +136,56 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Projects}
-\runsubsection{State Space Robotics Team}
-\descript{| Path-Planning Lead}
-\location{Jan 2018 – Present | Mississippi State, MS}
+\runsubsection{Endorsement Website}
+\descript{| \href{https://shorturl.at/nsBN1}{\textbf{Link}}}
+% \location{Jan 2018 – Present | Mississippi State, MS}
 \begin{tightemize}
-\item Spearhead the development effort for the path-planning functionality of a team of three robots.
-\item ROS provides movement servers and the planning is being implemented in Python to allow for fully-autonomous operation.
+\item Built an Endorsement website with \textbf{React} \textbf{Hooks} and \textbf{Redux} operations\textbf{}.
+\item Deployed by \textbf{Vercel} with added link to promotional sites.
 \end{tightemize}
 \sectionsep
 
-\runsubsection{Chit Chat}
-\descript{| Class Project for Distributed Client-Server Programming}
-\location{Jan 2018 – May 2018 | Mississippi State, MS}
+\runsubsection{Photo Viewer App}
+\descript{| Android}
+% \location{Jan 2018 – May 2018 | Mississippi State, MS}
 \begin{tightemize}
-\item Lead the development of \textbf{\href{http://www.chit-chat.net/}{Chit Chat}}, an anonymous chat application created as a class project.
-\item Chit Chat provides real-time communication while utilizing a PHP backend and AngularJS frontend.
+\item\textbf{} Android application which works as a photo gallery app.
+% \item Developed using Java.
 \end{tightemize}
 \sectionsep
+
+\runsubsection{PREDICTION OF IMAGES ON THE FIVE-k DATA SET}
+\descript{| Python, \textbf{CNN}}
+% \location{Jan 2018 – Present | Mississippi State, MS}
+\begin{tightemize}
+\item Achieved the model with an \textbf{accuracy} rate of\textbf{ 40\%}.
+\item Lead the development and code part of the trained model.
+\item Used different types of tools and libraries including \textbf{TensorFlow}, \textbf{NumPy}, and \textbf{Google} \textbf{Colab}.
+
+\end{tightemize}
+\sectionsep
+
+
+\section{Certificates}
+
+\textbullet{} ReCogNurize 2.0 Nurture Tek Knight:-
+\href{https://drive.google.com/file/d/19QS8m1nCr2uaZgyayOoVNlh_uhVuRDbB/view}{\bf Link } \\
+\textbf{(issued by Cognizant)}
+
+\textbullet{} Java Unit Testing with Junit and Mockito:-
+\href{https://www.udemy.com/certificate/UC-6d45af69-c69a-40f0-adf5-32839504ed8e/}{\bf Link} \\
+\textbf{(issued by Udemy)\\ }
+
+\textbullet{}Maven Crash Course:-
+\href{https://www.udemy.com/certificate/UC-9b27623c-ac04-4bc1-aa6d-64cf66b94b2b/}{\bf Link} \\
+\textbf{(issued by Udemy)\\}
+
+\textbullet{} Test-Driven Development:-
+\href{https://www.udemy.com/certificate/UC-ecb248bb-c6b9-402e-bd5e-78e3d311bdd9/}{\bf Link} \\
+\textbf{(issued by Udemy)\\}
+
+\sectionsep
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     RESEARCH
@@ -231,13 +266,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Education}
-
-\subsection{Mississippi State University}
-\descript{Bachelor of Science in Computer Science with minors in Mathematics and Statistics}
-\location{Expected Dec 2019 | Starkville, MS}
+\subsection{RCC INSTITUTE OF\\ INFORMATION TECHNOLOGY}
+\descript{B.Tech in CSE}
+\location{Expected 2019-2023}
 % College of Engineering \\
-Dean's List (All Semesters) \\
-\location{ Cum. GPA: 4.0 / 4.0}
+% Dean's List (All Semesters) \\
+\location{CGPA: 8.88}
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -245,19 +279,28 @@ Dean's List (All Semesters) \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Skills}
-\subsection{Programming}
-\location{3+ years:}
-Python \textbullet{} C/C++ \\
-\location{1+ years:}
-PHP \textbullet{} JavaScript \\
-\location{0+ years:}
-Matlab \textbullet{} R \textbullet{} SAS \\
+\subsection{LANGUAGE}
+\textbullet{} C/C++ \\
+\textbullet{} Java \\
+\textbullet{} JavaScript \\
+\textbullet{} Python \\ 
 \sectionsep
 
-\subsection{Technology}
-Git/Github \textbullet{} AWS \textbullet{} Linux \\
-UNIX \textbullet{} Windows \textbullet{} ROS \\
-Artificial Intelligence \textbullet{} Automation \\
+\subsection{CURRENT TECH}
+\textbullet{} React.js \\
+\textbullet{} Git/Github \\
+\sectionsep
+
+\subsection{RECENT TECH}
+\textbullet{} SpringBoot \\
+\textbullet{} Junit \\
+\textbullet{} Mockito \\
+\sectionsep
+
+\subsection{WORKED ON TECH}
+\textbullet{} Android \\
+\textbullet{} OpenCV \\
+\textbullet{} Pandas \\
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -265,29 +308,24 @@ Artificial Intelligence \textbullet{} Automation \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Coursework}
-\subsection{Graduate}
-Analysis of Algorithms
-\sectionsep
+\textbullet{}  Data Structure and Algorithms\\
+\textbullet{} Computer Networks\\
+\textbullet{} OOP's\\
+\textbullet{} DBMS\\
+\textbullet{} SQL\\
 
-\subsection{Undergraduate}
-Artificial Intelligence \\
-{\footnotesize \textit{\textbf{(Teaching Assistant) }}} \\
-AI Robotics \\
-Operating Systems I \\
-Calculus I-IV \\
-Data Analysis I \\
-Introduction to Probability \\
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Societies
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Societies}
-Association for Computing Machinery (ACM)\\
-Scrum Alliance Certified ScrumMaster\\
-Shackouls Honors College\\
-National Merit Scholarship Finalist \\
+\section{ACCOLADE}
+\textbullet{}\textbf{5 stars} in Problem-Solving on HackerRank.\\
+\textbullet{}\textbf{3 stars} on codechef. \\
+% \textbullet{}Got the second position in Intra-College "Spell Bee" competition. \\
+
+
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -295,9 +333,10 @@ National Merit Scholarship Finalist \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Links}
-Github:// \href{https://github.com/ZDTaylor}{\bf ZDTaylor} \\
-LinkedIn://  \href{https://www.linkedin.com/in/zacharydtaylor1}{\bf zacharydtaylor1} \\
-Career Center:// \href{https://msstate-csm.symplicity.com/profiles/zachary.taylor3}{\bf zachary.taylor3}
+Github:// \href{https://github.com/ADITYAPANJIYAR}{\bf Profile Link} \\
+LinkedIn://  \href{https://www.linkedin.com/in/adityapanjiyar/}{\bf Aditya Panjiyar} \\
+HackerRank:// \href{https://www.hackerrank.com/aditya_8mi}{\bf Profile Link} \\
+% Career Center:// \href{}{\bf zachary.taylor3}
 \sectionsep
 
 \end{minipage}
