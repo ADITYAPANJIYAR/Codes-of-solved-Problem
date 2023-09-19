@@ -21,3 +21,30 @@ public:
 	    return false;
 	}
 };
+
+//or
+class Solution{
+public:	
+	// Function to check if array has 2 elements
+	// whose sum is equal to the given value
+	bool hasArrayTwoCandidates(int arr[], int n, int x)
+	{
+	    // code here
+	    int hash[100009]={0};
+	    for(int i=0;i<n;i++)
+	    hash[arr[i]]++;
+	    
+	    for(int i=0;i<n;i++)
+	    {
+	        if(arr[i]>x)
+	        continue;
+	        
+	        int sum=x-arr[i];
+	        if(sum==x/2 and hash[sum]>1)
+	        return true;
+	        if(sum!=x/2 and hash[sum]>0)
+	        return true;
+	    }
+	    return false;
+	}
+};
