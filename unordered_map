@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    unordered_map<int,int>umap;
+    for(int i=1;i<=5;i++)
+    {
+        umap[i]++;
+    }
+    umap[3]++;umap[3]++;umap[3]++;
+    umap[2]++;umap[2]++;
+    umap[2]=56;
+    umap[2]--;
+    umap.insert(make_pair(10,75));
+    
+    if(umap.find(2)==umap.end())
+    cout<<"Not found"<<endl;
+    else
+    cout<<"found"<<endl;
+    
+    
+    for (auto x : umap)
+    cout << x.first << " " << x.second << endl;
+}
