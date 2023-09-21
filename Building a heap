@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void heapify(int arr[], int n, int index)
+{
+    int largest=index;
+    int left=2*index;
+    int right=(2*index)+1;
+    
+    if(left<n and arr[left]>arr[largest])
+    largest=left;
+    
+    if(right<n and arr[right]>arr[largest])
+    largest=right;
+    
+    if(largest!=index)
+    {
+        swap(arr[largest],arr[index]);
+        heapify(arr,n,largest);
+    }
+}
+
+void builheap(int arr[], int n)
+{
+    for(int i=n/2; i>=0; i--)
+    {
+        heapify(arr,n,i);
+    }
+}
+
+
+void display(int arr[], int n)
+{
+    for(int i=0;i<n;i++)
+    cout<<arr[i]<<" ";
+    cout<<endl;
+}
+
+int main()
+{
+    int arr[]={10,30,50,20,35,15};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    cout<<"Array before heap"<<endl;
+    display(arr,n);
+    builheap(arr,n);
+    cout<<"Array after heap"<<endl;
+    display(arr,n);
+    
+}
