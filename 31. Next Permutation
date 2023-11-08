@@ -1,0 +1,35 @@
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) 
+    {
+        int n=nums.size()-1,idx=-1;
+        int i=n;
+        while(i>0)
+        {
+            if(nums[i]>nums[i-1])
+            {
+                idx=i;
+                break;
+            }
+            i--;
+        }
+        
+        if(idx==-1)
+        reverse(nums.begin(),nums.end());
+        else
+        {
+            i=idx+1;
+            int prev=idx;
+            while(i<=n)
+            {
+                if(nums[i]>nums[idx-1] and nums[i]<=nums[prev])
+                {
+                    prev=i;
+                }
+                i++;
+            }
+            swap(nums[idx-1],nums[prev]);
+            reverse(nums.begin()+idx,nums.end());
+        }
+    }
+};
