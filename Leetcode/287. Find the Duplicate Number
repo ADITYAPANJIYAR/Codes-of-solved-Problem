@@ -1,0 +1,40 @@
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) 
+    {
+        int ans=0;
+        sort(nums.begin(), nums.end());
+        for(int i=1;i<nums.size();i++)
+        {
+            if(nums[i]==nums[i-1])
+            {
+                ans=nums[i];
+                break;
+            }
+        }
+        return ans;
+    }
+};
+
+//OR
+
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        
+        int hash[100001]={0};
+        int i,n,result;
+        n=nums.size();
+        for(i=0;i<n;i++){
+            hash[nums[i]]++;
+        }
+        for(i=0;i<100001;i++){
+            if(hash[i]>1){
+                result=i;
+                break;
+            }
+        }
+        return result;
+        
+    }
+};
