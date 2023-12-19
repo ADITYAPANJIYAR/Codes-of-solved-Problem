@@ -29,3 +29,43 @@ public:
         
     }
 };
+
+//(will pass all the test cases)...
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) 
+    {
+        vector<vector<int>>ans;
+        stack<pair<int,int>> s;
+        sort(intervals.begin(),intervals.end());
+        s.push({intervals[0][0],intervals[0][1]});
+        
+        for(int i=1;i<intervals.size();i++)
+        {
+            int start1=s.top().first;
+            int end1=s.top().second;
+            int start2=intervals[i][0];
+            int end2=intervals[i][1];
+            
+            if(end1>=start2)
+            {
+                s.pop();
+                int minimum=min(start1,start2);
+                int maximum=max(end1,end2);
+                s.push({minimum,maximum});
+            }
+            else
+            s.push({start2,end2});
+        }
+        
+        while(!s.empty())
+        {
+            vector<int> temp;
+            temp.push_back(s.top().first);
+            temp.push_back(s.top().second);
+            ans.push_back(temp);
+            s.pop();
+        }
+        return ans;
+    }
+};
