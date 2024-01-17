@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t)
+	{
+	    t--;
+	    int h,x,y1,y2,k;
+	    cin>>h>>x>>y1>>y2>>k;
+	    int xcount=0, ycount=0;
+	    
+	    //xcount...
+	    if(h%x==0)
+	    xcount=h/x;
+	    else
+	    xcount=(h/x)+1;
+	    
+	    //ycount...
+	    if((double)h/y1>k)
+	    {
+	        ycount=k;
+	        h=h-(y1*k);
+	        ycount=ycount+(h/y2);
+	        if(h%y2!=0)
+	        ycount++;
+	    }
+	    
+	    else
+	    {
+	        ycount=h/y1;
+	        if(h%y1!=0)
+	        {
+	            ycount++;
+	        }
+	    }
+	    
+    	if(xcount<ycount)
+    	cout<<xcount<<endl;
+    	else
+    	cout<<ycount<<endl;
+	}
+}
